@@ -42,7 +42,7 @@ Full enriched transaction history powered by Helius. Filter by swaps, transfers,
 Analyse any Solana wallet address instantly. Search, compare, and track wallets with a single click. Recent searches are saved locally for quick access.
 
 ### 🤖 AI Assistant
-Claude-powered wallet analysis. Ask questions about any wallet, get risk explanations, and surface insights from on-chain data in plain English.
+AI-powered wallet analysis. Ask questions about any wallet, get risk explanations, and surface insights from on-chain data in plain English.
 
 ### 🔑 REST API
 Programmatic access to BlackMint's wallet data for developers and quant traders. Generate API keys, access wallet balances, token holdings, transaction history, and the top-holder leaderboard for any [...]
