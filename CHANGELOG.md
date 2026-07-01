@@ -21,30 +21,29 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 ### Added
 - 🚀 Initial public launch of BlackMint
 - Wallet overview dashboard with SOL balance, USD value, token count, and transaction count
-- Full enriched transaction history powered by Helius — swaps, transfers, staking, failed transactions
-- On-chain risk scoring (0–100) with four heuristic factors: Activity History, Activity Level, Failed Transactions, Diversification
+- Full enriched transaction history powered by Helius — swaps, transfers, staking, and failed transactions
+- On-chain risk scoring (0–100) with four heuristic factors: Activity History, Activity Level, Failed Transactions, and Diversification
 - AI-powered risk recommendations via Anthropic Claude
 - Risk score history and trend tracking
-- Whale Tracker — watchlist of high-value wallets with balance tracking, 24H/7D change indicators, and activity breakdown
-- Token holder leaderboard for any SPL token via Helius DAS API
-- AI Assistant — persistent chat powered by Claude with full conversation history
-- Wallet search with recent search history and DiceBear avatar identicons
+- Whale Tracker — watchlist of high-value wallets with balance tracking, 24H/7D change indicators, and whale activity breakdown
+- Token holder leaderboard for any SPL token
+- AI Assistant — persistent chat with full conversation history
+- Wallet search with recent search history
 - Market Overview — top 100 Solana tokens with price, market cap, volume, and 24H change
-- Fear & Greed sentiment gauge
-- Token allocation donut chart
+- Fear and Greed sentiment gauge
+- Token allocation chart
 - REST API with key generation, management, and revocation
 - Sign-In With Solana (SIWS) authentication
 - On-chain SOL subscription payments with replay protection
 - Free, Premium, and Pro subscription tiers
-- Subscription management page with downgrade, cancel, and resume flows
-- Sidebar navigation with tier-aware upgrade prompts
+- Subscription management with downgrade, cancel, and resume flows
 - Landing page with hero, features, pricing, and CTA sections
 
 ### Security
 - API keys stored as SHA-256 hashes
 - On-chain payment verification with transaction signature replay protection
 - HTTPS enforced across all endpoints
-- Dev backdoor route removed before production launch
+- Production hardened before launch
 
 ---
 
