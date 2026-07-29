@@ -68,7 +68,7 @@ All content, design, code, branding, and materials on the Platform are the intel
 
 ## 9. Third-Party Services
 
-The Platform integrates with third-party services including Helius (Solana data), Anthropic (AI), and CoinGecko (market data). BlackMint is not responsible for the availability, accuracy, or practices of these third-party services. Your use of the Platform is subject to their respective terms and policies.
+The Platform integrates with third-party services including Helius (Solana data), Anthropic (AI), DexScreener (new token listing data), and CoinGecko (market data). BlackMint is not responsible for the availability, accuracy, or practices of these third-party services. Your use of the Platform is subject to their respective terms and policies.
 
 ---
 
