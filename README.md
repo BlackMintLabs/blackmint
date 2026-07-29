@@ -154,7 +154,11 @@ Found a bug or have a feature idea? Open an issue directly on this repository �
 
 ## License
 
-MIT License — see [LICENSE](LICENSE) for details.
+This repository (documentation, issue tracking, and support) is provided as-is for transparency and community engagement.
+
+BlackMint's application source code (frontend and backend) is proprietary and not included in this repository. The MIT license badge above applies only to the contents of this repository itself — the README, documentation, and any code samples shown here.
+
+See [LICENSE](LICENSE) for the full text.
 
 ---
 
