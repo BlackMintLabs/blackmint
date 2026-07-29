@@ -57,6 +57,7 @@ BlackMint uses the following third-party services to operate the Platform. Each 
 
 - **Helius** — Solana blockchain data and RPC. Wallet addresses and transaction data are sent to Helius to retrieve on-chain information.
 - **Anthropic** — AI-powered risk recommendations and the AI Assistant. Wallet analysis context is sent to Anthropic's API to generate insights.
+- **DexScreener** — Token listing data for the Discover feature. Token addresses are sent to DexScreener's public API to retrieve pricing and liquidity information. No personal or wallet-identifying data is sent to DexScreener.
 - **CoinGecko** — Market price and token data. No personal data is sent to CoinGecko.
 - **Vercel** — Frontend hosting. Standard web request logs may be collected by Vercel.
 - **Railway** — Backend infrastructure hosting. Server logs are retained by Railway according to their data retention policy.
