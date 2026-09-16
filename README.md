@@ -13,7 +13,7 @@
 
 *See what smart money sees. Act before they move.*
 
-[Visit BlackMint](https://blackmint.app) · [Report a Bug](https://github.com/BlackMintLabs/blackmint/issues) · [Request a Feature](https://github.com/BlackMintLabs/blackmint/issues)
+[Report a Bug](https://github.com/BlackMintLabs/blackmint/issues) · [Request a Feature](https://github.com/BlackMintLabs/blackmint/issues)
 
 </div>
 
@@ -23,20 +23,20 @@
 
 BlackMint is a real-time Solana wallet intelligence platform built for traders who want an edge. It gives you deep visibility into on-chain activity — from whale movements to wallet-level risk scoring — all backed by live blockchain data.
 
-No sign-ups. No credit cards. Connect your Solana wallet and start in seconds. Payments are fully on-chain in SOL.
+**Every feature is free to use.** No sign-ups, no credit cards, no subscription required. Connect your Solana wallet and start in seconds.
 
 ---
 
 ## Features
+
+### Mint Scan
+A live, standalone feed of newly listed Solana tokens, each cross-checked against the on-chain risk profile of the wallet that deployed it — helping you spot likely low-quality launches before you interact with them. Includes real-time price charts, favoriting, and a Simple mode for less experienced traders.
 
 ### Whale Tracker
 Monitor high-value wallets in real time. Build a watchlist of whale addresses, track their SOL balances, and see recent activity at a glance.
 
 ### Risk Score
 On-chain heuristic risk assessment for any Solana wallet. BlackMint analyses activity history, transaction failure rates, and holding concentration to generate a 0–100 risk score, with optional AI-generated recommendations explaining the result in plain English.
-
-### Discover
-A live feed of newly listed Solana tokens, each cross-checked against the on-chain risk profile of the wallet that deployed it — helping you spot likely low-quality launches before you interact with them.
 
 ### Transaction Intelligence
 Full enriched transaction history powered by Helius. Filter by swaps, transfers, and failed transactions, with token logos, counterparty addresses, and volumes.
@@ -45,10 +45,10 @@ Full enriched transaction history powered by Helius. Filter by swaps, transfers,
 Analyse any Solana wallet address instantly. Search, compare, and track wallets with a single click. Recent searches are saved locally for quick access.
 
 ### AI Assistant
-AI-powered wallet analysis. Ask questions about any wallet and surface insights from on-chain data in plain English. Available on the Pro plan, with a daily message limit.
+AI-powered wallet analysis. Ask questions about any wallet and surface insights from on-chain data in plain English.
 
 ### REST API
-Programmatic access to BlackMint's wallet data for developers and quant traders. Generate API keys, and access wallet balances, token holdings, transaction history, risk scores, and watchlist data for any address.
+Programmatic access to BlackMint's wallet and market data for developers and quant traders. Generate an API key for free and start making requests immediately — wallet balances, token holdings, transaction history, risk scores, live token charts, market data, and watchlist leaderboards are all available. Higher request-rate tiers are available as a paid upgrade for heavier usage.
 
 ### Market Overview
 Real-time Solana ecosystem market data — top tokens by market cap, 24H price changes, and volume.
@@ -66,22 +66,24 @@ Real-time Telegram notifications when a monitored wallet makes an on-chain move,
 | Backend | Node.js, Express, TypeScript |
 | Database | PostgreSQL |
 | Blockchain | Solana Web3.js, Wallet Adapter, SIWS |
-| Data | Helius RPC & DAS API |
+| Data | Helius RPC & DAS API, GMGN market data, CoinGecko |
 | AI | Anthropic Claude (Haiku) |
-| Auth | Sign-In With Solana (JWT) |
-| Payments | On-chain SOL payments with replay protection |
+| Auth | Sign-In With Solana (JWT) + API key authentication |
+| Payments | On-chain SOL payments with replay protection, priced in live USD-equivalent SOL |
 
 ---
 
 ## Pricing
 
-BlackMint uses fully on-chain SOL payments. No credit cards, no KYC, no subscriptions managed by us — everything is verified directly on the Solana blockchain.
+BlackMint itself is completely free to use — every feature, unlimited. The only thing that's ever paid is **API access**, for developers who need a higher request rate than the free tier provides. Pricing follows a simple weight-based model: every plan gets a request-rate budget, and each API endpoint costs a fixed weight against that budget.
 
-| Plan | Price | Features |
+| Plan | Price | Rate Budget |
 |---|---|---|
-| **Free** | $0 | Wallet overview, market data, basic search |
-| **Premium** | 0.5 SOL / 30 days | Full transaction history, risk scoring with AI recommendations, Discover feed |
-| **Pro** | 2 SOL / 30 days | Everything in Premium, plus whale tracking, AI Assistant, Telegram alerts, and full API access |
+| **Free** | $0 | Weight 5 (~5 requests/sec) |
+| **Premium** | $250 / year | Weight 20 (~20 requests/sec) |
+| **Pro** | $750 / year | Weight 50 (~50 requests/sec) |
+
+All API payments are on-chain, in SOL, priced live against the current SOL/USD rate at checkout — you always pay the equivalent of the listed USD price, not a fixed SOL amount.
 
 ---
 
@@ -94,14 +96,13 @@ BlackMint uses fully on-chain SOL payments. No credit cards, no KYC, no subscrip
 
 ### Connect and Go
 
-1. Visit [blackmint.app](https://blackmint.app)
-2. Click **Connect Wallet**
-3. Sign the authentication message
-4. Start analysing wallets instantly on the Free plan
+1. Connect your Solana wallet
+2. Sign the authentication message
+3. Every feature is unlocked instantly — no plan selection required
 
-### Upgrade
+### API Access
 
-Navigate to **Subscribe** in the dashboard, select your plan, and confirm the SOL payment directly from your wallet. Access is granted on-chain within seconds.
+Generate a free API key from your dashboard to start making requests right away. If you need a higher request rate, upgrade your API plan — payment is confirmed on-chain within seconds.
 
 ---
 
@@ -112,12 +113,13 @@ blackmint-frontend/     -> Next.js app (Vercel)
 blackmint-backend/      -> Express API (Railway)
                         -> PostgreSQL (Railway)
                         -> Helius RPC (Solana data)
+                        -> GMGN (market & token data)
                         -> Anthropic API (AI)
 ```
 
-The frontend communicates with the backend via a REST API. Authentication uses Sign-In With Solana (SIWS) — your wallet signs a message, the backend verifies the signature and issues a JWT. No passwords are ever used or stored.
+The frontend communicates with the backend via a REST API. Authentication uses Sign-In With Solana (SIWS) — your wallet signs a message, the backend verifies the signature and issues a JWT. No passwords are ever used or stored. External API requests authenticate with a generated API key instead, rate-limited according to your plan.
 
-Subscription payments are verified on-chain by checking the Solana blockchain for a confirmed SOL transfer to the BlackMint treasury wallet with the correct amount.
+API subscription payments are verified on-chain by checking the Solana blockchain for a confirmed SOL transfer to the BlackMint treasury wallet worth at least the plan's listed USD price at the time of payment.
 
 ---
 
@@ -128,10 +130,11 @@ Subscription payments are verified on-chain by checking the Solana blockchain fo
 - [x] On-chain risk scoring with AI recommendations
 - [x] Whale watchlist and tracker
 - [x] AI wallet assistant
-- [x] REST API with key management
-- [x] On-chain SOL subscription payments
+- [x] On-chain SOL subscription payments, USD-pegged with live conversion
 - [x] Telegram bot alerts for monitored wallets
-- [x] New token risk discovery feed
+- [x] Mint Scan — standalone new token risk discovery feed with live charts
+- [x] Real, working REST API authentication with weight-based rate limiting
+- [x] Persistent favorites on Mint Scan
 - [ ] Portfolio tracking across multiple wallets
 - [ ] Mobile app
 
@@ -148,7 +151,7 @@ Subscription payments are verified on-chain by checking the Solana blockchain fo
 
 ## Contributing
 
-Found a bug or have a feature idea? Open an issue directly on this repository — every bug report, feature request, and question is tracked here in the open. See our [Contact page](https://blackmint.app/contact) for the fastest way to file one.
+Found a bug or have a feature idea? Open an issue directly on this repository — every bug report, feature request, and question is tracked here in the open.
 
 ---
 
@@ -165,7 +168,5 @@ See [LICENSE](LICENSE) for the full text.
 <div align="center">
 
 Built on Solana
-
-[blackmint.app](https://blackmint.app) · [@BlackMintApp](https://twitter.com/BlackMintApp)
 
 </div>
