@@ -64,4 +64,4 @@ We follow responsible disclosure principles. We ask that you:
 - Not access, modify, or delete user data
 - Act in good faith throughout the process
 
-We will not pursue legal action against researchers who follow these guidelines.
+> _**Safe Harbor:** We will not pursue legal action against researchers who follow these guidelines._
