@@ -11,6 +11,31 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 ---
 
+## [1.2.0] — 2026
+### Changed
+- **BlackMint is now free to use** — every feature (Mint Scan, Risk Score, Whale Tracker, AI Assistant, Alerts, Favorites) is available to any connected wallet, no subscription required
+- Renamed "Discover" to **Mint Scan**, now its own standalone section with a dedicated navigation bar, live-updating token feed, and real-time price charts
+- Subscription tiers now apply to **API access only** — the app itself has no paywall
+- API pricing rebuilt around a GMGN-style weight-based rate limit system: Free (weight 5), Premium (weight 20), Pro (weight 50)
+- Subscription pricing is now USD-pegged ($250/year Premium, $750/year Pro), with the exact SOL amount computed live from the current SOL/USD price at checkout rather than a fixed SOL amount
+
+### Added
+- Real REST API authentication — API keys can now actually authenticate external requests
+- Weight-based rate limiting per API tier
+- Expanded public API surface: wallet balance, wallet risk history, market prices/sentiment/top movers, and live token charts, alongside the existing wallet risk, transactions, and token holdings endpoints
+- Persistent Favorites on Mint Scan, synced to your account instead of resetting each session
+- Wallet-level risk score caching to reduce redundant lookups on repeat deployer wallets
+- Live-updating token charts, with automatic fallback to a shorter timeframe when a longer one doesn't have enough data yet
+
+### Fixed
+- Multiple Mint Scan chart reliability and scaling issues
+- Wallet session no longer clears unexpectedly on page refresh
+
+### Removed
+- Pricing section removed from the landing page, reflecting BlackMint's move to free-to-use
+
+---
+
 ## [1.1.0] — 2026
 ### Added
 - Discover — live feed of newly listed Solana tokens, each cross-checked against the on-chain risk profile of its deployer wallet
@@ -36,7 +61,7 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 - Market Overview — top 100 Solana tokens with price, market cap, volume, and 24H change
 - Fear and Greed sentiment gauge
 - Token allocation chart
-- REST API with key generation, management, and revocation
+- API key generation and management
 - Sign-In With Solana (SIWS) authentication
 - On-chain SOL subscription payments with replay protection
 - Free, Premium, and Pro subscription tiers
