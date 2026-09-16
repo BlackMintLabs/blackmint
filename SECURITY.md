@@ -28,14 +28,14 @@ Include the following in your report:
 ## Scope
 
 The following are in scope for security reports:
-- blackmint.app and all subdomains
+- The BlackMint web application and all associated subdomains
 - BlackMint API endpoints
 - Authentication and wallet connection flows
 - On-chain payment verification logic
-- API key generation and management
+- API key generation, authentication, and rate limiting
 
 The following are out of scope:
-- Third-party services and APIs (Helius, Anthropic, CoinGecko, DexScreener)
+- Third-party services and APIs (Helius, Anthropic, CoinGecko, GMGN)
 - The Solana blockchain itself
 - Social engineering attacks
 - Denial of service attacks
