@@ -1,7 +1,7 @@
 # Terms of Service
 
 **Effective Date:** July 2026
-**Last Updated:** July 2026
+**Last Updated:** September 2026
 
 ## 1. Acceptance of Terms
 
@@ -13,7 +13,7 @@ We reserve the right to modify these Terms at any time. Continued use of the Pla
 
 ## 2. Description of Service
 
-BlackMint is a Solana blockchain intelligence platform that provides wallet analysis, transaction history, risk scoring, whale tracking, AI-powered insights, and API access. The Platform is intended for informational and analytical purposes only.
+BlackMint is a Solana blockchain intelligence platform that provides wallet analysis, transaction history, risk scoring, whale tracking, and AI-powered insights. Every feature of the Platform is free to use. BlackMint also offers a paid REST API upgrade for developers who require a higher request rate than the free tier provides. The Platform is intended for informational and analytical purposes only.
 
 ---
 
@@ -29,13 +29,14 @@ BlackMint uses Sign-In With Solana (SIWS) for authentication. You sign a cryptog
 
 ---
 
-## 5. Subscriptions and Payments
+## 5. API Subscriptions and Payments
 
-BlackMint offers Free, Premium, and Pro subscription tiers. Paid subscriptions are purchased using SOL on the Solana blockchain.
+Every feature of the BlackMint application is free to use — no subscription is required to access the Platform. BlackMint offers a paid upgrade path for API access only, for developers who require a higher request rate than the Free API tier provides.
 
+- API plans (Premium and Pro) are priced in USD and paid on-chain in SOL, computed live against the current SOL/USD exchange rate at the time of payment.
 - All payments are made on-chain and are final. Due to the nature of blockchain transactions, payments cannot be reversed or refunded once confirmed on-chain.
-- Subscriptions are valid for 30 days from the date of payment.
-- Access to paid features will expire at the end of the subscription period unless renewed.
+- Paid API plans are valid for 365 days from the date of payment.
+- Your API request rate will revert to the Free tier at the end of the paid period unless renewed.
 - BlackMint does not store any payment card details. All payments are processed entirely on the Solana blockchain.
 
 ---
@@ -56,7 +57,7 @@ You agree not to use the Platform to:
 
 ## 7. API Access
 
-Pro subscribers may generate API keys to access BlackMint's REST API. API keys are personal and must not be shared or redistributed. BlackMint reserves the right to revoke API keys that are misused or that violate these Terms. API keys are stored as cryptographic hashes and the plaintext key is displayed only once at creation — you are responsible for storing it securely.
+Any connected wallet may generate a free API key to access BlackMint's REST API, subject to the Free tier's request-rate limit. API keys are personal and must not be shared or redistributed. BlackMint reserves the right to revoke API keys that are misused or that violate these Terms. API keys are stored as cryptographic hashes and the plaintext key is displayed only once at creation — you are responsible for storing it securely.
 
 ---
 
@@ -68,7 +69,7 @@ All content, design, code, branding, and materials on the Platform are the intel
 
 ## 9. Third-Party Services
 
-The Platform integrates with third-party services including Helius (Solana data), Anthropic (AI), DexScreener (new token listing data), and CoinGecko (market data). BlackMint is not responsible for the availability, accuracy, or practices of these third-party services. Your use of the Platform is subject to their respective terms and policies.
+The Platform integrates with third-party services including Helius (Solana data), Anthropic (AI), GMGN (market and new token listing data), and CoinGecko (market data). BlackMint is not responsible for the availability, accuracy, or practices of these third-party services. Your use of the Platform is subject to their respective terms and policies.
 
 ---
 
