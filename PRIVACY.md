@@ -1,7 +1,7 @@
 # Privacy Policy
 
 **Effective Date:** July 2026
-**Last Updated:** July 2026
+**Last Updated:** September 2026
 
 ## 1. Introduction
 
@@ -17,13 +17,14 @@ BlackMint collects minimal data necessary to operate the Platform:
 When you connect your Solana wallet and sign in, we store your wallet address. This is your identity on the Platform — we do not collect your name, email address, or any other personally identifiable information.
 
 **Subscription Data**
-We store your subscription tier, start date, and expiry date. Payment is verified on-chain via transaction signature — we do not store payment card details, bank details, or any financial information.
+If you upgrade your API access, we store your subscription tier, start date, and expiry date. Payment is verified on-chain via transaction signature — we do not store payment card details, bank details, or any financial information.
 
 **Usage Data**
 We store data you actively create on the Platform, including:
 - Wallet addresses you add to your watchlist
 - Wallet monitors you set up for Telegram alerts
 - Risk scores generated for wallets you analyse
+- Favorited tokens on Mint Scan
 - API keys you generate (stored as cryptographic hashes only)
 - AI conversation history (stored to provide conversation continuity)
 - Search history (stored locally in your browser)
@@ -41,8 +42,8 @@ Standard server logs including request timestamps, IP addresses, and error messa
 We use the data we collect solely to:
 
 - Authenticate your wallet and maintain your session
-- Deliver the features you subscribe to (transaction history, risk scoring, whale tracking, alerts, API access)
-- Verify subscription payments on-chain
+- Deliver the Platform's features — transaction history, risk scoring, Mint Scan, whale tracking, alerts, and the AI Assistant are available to every connected wallet at no charge
+- Verify API subscription payments on-chain, for users who choose to upgrade their API rate limits
 - Send Telegram alerts for wallets you have chosen to monitor
 - Improve the reliability and performance of the Platform
 - Comply with applicable legal obligations
@@ -57,7 +58,7 @@ BlackMint uses the following third-party services to operate the Platform. Each 
 
 - **Helius** — Solana blockchain data and RPC. Wallet addresses and transaction data are sent to Helius to retrieve on-chain information.
 - **Anthropic** — AI-powered risk recommendations and the AI Assistant. Wallet analysis context is sent to Anthropic's API to generate insights.
-- **DexScreener** — Token listing data for the Discover feature. Token addresses are sent to DexScreener's public API to retrieve pricing and liquidity information. No personal or wallet-identifying data is sent to DexScreener.
+- **GMGN** — Live token and market data for Mint Scan. Token addresses are sent to GMGN's API to retrieve pricing, liquidity, and chart information. No personal or wallet-identifying data is sent to GMGN.
 - **CoinGecko** — Market price and token data. No personal data is sent to CoinGecko.
 - **Vercel** — Frontend hosting. Standard web request logs may be collected by Vercel.
 - **Railway** — Backend infrastructure hosting. Server logs are retained by Railway according to their data retention policy.
