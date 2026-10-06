@@ -13,22 +13,18 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 ## [1.2.0] — 2026
 ### Changed
-- **BlackMint is now free to use** — every feature (Mint Scan, Risk Score, Whale Tracker, AI Assistant, Alerts, Favorites) is available to any connected wallet, no subscription required
-- Renamed "Discover" to **Mint Scan**, now its own standalone section with a dedicated navigation bar, live-updating token feed, and real-time price charts
+- **BlackMint is now free to use** — every feature (Risk Score, Whale Tracker, AI Assistant, Alerts) is available to any connected wallet, no subscription required
 - Subscription tiers now apply to **API access only** — the app itself has no paywall
-- API pricing rebuilt around a GMGN-style weight-based rate limit system: Free (weight 5), Premium (weight 20), Pro (weight 50)
+- API pricing rebuilt around a weight-based rate limit system: Free (weight 5), Premium (weight 20), Pro (weight 50)
 - Subscription pricing is now USD-pegged ($250/year Premium, $750/year Pro), with the exact SOL amount computed live from the current SOL/USD price at checkout rather than a fixed SOL amount
 
 ### Added
 - Real REST API authentication — API keys can now actually authenticate external requests
 - Weight-based rate limiting per API tier
-- Expanded public API surface: wallet balance, wallet risk history, market prices/sentiment/top movers, and live token charts, alongside the existing wallet risk, transactions, and token holdings endpoints
-- Persistent Favorites on Mint Scan, synced to your account instead of resetting each session
-- Wallet-level risk score caching to reduce redundant lookups on repeat deployer wallets
-- Live-updating token charts, with automatic fallback to a shorter timeframe when a longer one doesn't have enough data yet
+- Expanded public API surface: wallet balance, wallet risk history, and market prices/sentiment/top movers, alongside the existing wallet risk, transactions, and token holdings endpoints
+- Wallet-level risk score caching to reduce redundant lookups on repeat requests
 
 ### Fixed
-- Multiple Mint Scan chart reliability and scaling issues
 - Wallet session no longer clears unexpectedly on page refresh
 
 ### Removed
@@ -38,7 +34,6 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 ## [1.1.0] — 2026
 ### Added
-- Discover — live feed of newly listed Solana tokens, each cross-checked against the on-chain risk profile of its deployer wallet
 - Telegram wallet alerts — link your account via a one-time code, monitor wallets, and receive instant notifications on-chain activity, with full alert history
 - Risk history page — full stored risk score history for any wallet
 - Tiered daily usage limits on AI-powered features (AI Assistant, risk recommendations), scaled by subscription tier
