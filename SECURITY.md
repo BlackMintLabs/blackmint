@@ -35,7 +35,7 @@ The following are in scope for security reports:
 - API key generation, authentication, and rate limiting
 
 The following are out of scope:
-- Third-party services and APIs (Helius, Anthropic, CoinGecko, GMGN)
+- Third-party services and APIs (Helius, Anthropic, CoinGecko, alternative.me)
 - The Solana blockchain itself
 - Social engineering attacks
 - Denial of service attacks
@@ -54,7 +54,7 @@ BlackMint implements the following security practices:
 - On-chain payment verification with replay protection — each transaction signature can only be used once
 - API keys are stored as SHA-256 hashes — plaintext keys are shown only once at creation
 - All connections are encrypted via HTTPS/TLS
-- No personal data is collected — your wallet address is your identity
+- Minimal data is collected — your wallet address is your identity
 
 ## Responsible Disclosure
 
