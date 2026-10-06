@@ -29,9 +29,6 @@ BlackMint is a real-time Solana wallet intelligence platform built for traders w
 
 ## Features
 
-### Mint Scan
-A live, standalone feed of newly listed Solana tokens, each cross-checked against the on-chain risk profile of the wallet that deployed it — helping you spot likely low-quality launches before you interact with them. Includes real-time price charts, favoriting, and a Simple mode for less experienced traders.
-
 ### Whale Tracker
 Monitor high-value wallets in real time. Build a watchlist of whale addresses, track their SOL balances, and see recent activity at a glance.
 
@@ -48,7 +45,7 @@ Analyse any Solana wallet address instantly. Search, compare, and track wallets 
 AI-powered wallet analysis. Ask questions about any wallet and surface insights from on-chain data in plain English.
 
 ### REST API
-Programmatic access to BlackMint's wallet and market data for developers and quant traders. Generate an API key for free and start making requests immediately — wallet balances, token holdings, transaction history, risk scores, live token charts, market data, and watchlist leaderboards are all available. Higher request-rate tiers are available as a paid upgrade for heavier usage.
+Programmatic access to BlackMint's wallet and market data for developers and quant traders. Generate an API key for free and start making requests immediately — wallet balances, token holdings, transaction history, risk scores, market data, and watchlist leaderboards are all available. Higher request-rate tiers are available as a paid upgrade for heavier usage.
 
 ### Market Overview
 Real-time Solana ecosystem market data — top tokens by market cap, 24H price changes, and volume.
@@ -66,7 +63,7 @@ Real-time Telegram notifications when a monitored wallet makes an on-chain move,
 | Backend | Node.js, Express, TypeScript |
 | Database | PostgreSQL |
 | Blockchain | Solana Web3.js, Wallet Adapter, SIWS |
-| Data | Helius RPC & DAS API, GMGN market data, CoinGecko |
+| Data | Helius RPC & DAS API, CoinGecko, alternative.me |
 | AI | Anthropic Claude (Haiku) |
 | Auth | Sign-In With Solana (JWT) + API key authentication |
 | Payments | On-chain SOL payments with replay protection, priced in live USD-equivalent SOL |
@@ -75,7 +72,7 @@ Real-time Telegram notifications when a monitored wallet makes an on-chain move,
 
 ## Pricing
 
-BlackMint itself is completely free to use — every feature, unlimited. The only thing that's ever paid is **API access**, for developers who need a higher request rate than the free tier provides. Pricing follows a simple weight-based model: every plan gets a request-rate budget, and each API endpoint costs a fixed weight against that budget.
+BlackMint itself is free to use — every feature is available to any connected wallet. The only paid option is **API access**, for developers who need a higher request rate than the free tier provides. Pricing follows a simple weight-based model: every plan gets a request-rate budget, and each API endpoint costs a fixed weight against that budget.
 
 | Plan | Price | Rate Budget |
 |---|---|---|
@@ -113,7 +110,7 @@ blackmint-frontend/     -> Next.js app (Vercel)
 blackmint-backend/      -> Express API (Railway)
                         -> PostgreSQL (Railway)
                         -> Helius RPC (Solana data)
-                        -> GMGN (market & token data)
+                        -> CoinGecko & alternative.me (market data)
                         -> Anthropic API (AI)
 ```
 
@@ -132,9 +129,7 @@ API subscription payments are verified on-chain by checking the Solana blockchai
 - [x] AI wallet assistant
 - [x] On-chain SOL subscription payments, USD-pegged with live conversion
 - [x] Telegram bot alerts for monitored wallets
-- [x] Mint Scan — standalone new token risk discovery feed with live charts
 - [x] Real, working REST API authentication with weight-based rate limiting
-- [x] Persistent favorites on Mint Scan
 - [ ] Portfolio tracking across multiple wallets
 - [ ] Mobile app
 
@@ -145,7 +140,7 @@ API subscription payments are verified on-chain by checking the Solana blockchai
 - All payments are verified on-chain with replay protection (each transaction signature can only be used once)
 - Wallet authentication uses Sign-In With Solana — we never store private keys
 - API keys are stored as SHA-256 hashes — the plaintext key is only shown once at creation
-- No personal data is collected — your wallet address is your identity
+- Minimal data is collected — your wallet address is your identity
 
 ---
 
