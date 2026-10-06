@@ -13,7 +13,7 @@
 
 ---
 
-> Query any Solana wallet's on-chain risk profile, transaction history, and holdings — plus live token discovery, market data, and price charts — with a single API key. Free to start, no signup fee, no credit card. Upgrade only if you need a higher request rate.
+> Query any Solana wallet's on-chain risk profile, transaction history, and holdings — plus live market data — with a single API key. Free to start, no signup fee, no credit card. Upgrade only if you need a higher request rate.
 
 ---
 
@@ -106,8 +106,6 @@ Paid plans are billed once a year, on-chain in SOL, computed live against the cu
 | [`GET /wallet/:address/risk`](#get-walletaddressrisk) | 2 | BlackMint AI Risk Score (0–100) |
 | [`GET /wallet/:address/transactions`](#get-walletaddresstransactions) | 2 | Enriched transaction history |
 | [`GET /wallet/:address/risk-history`](#get-walletaddressrisk-history) | 2 | Stored risk score history |
-| [`GET /discover`](#get-discover) | 2 | Live Mint Scan token feed |
-| [`GET /discover/chart/:address`](#get-discoverchartaddress) | 2 | Candlestick price chart |
 | [`GET /watchlist/leaderboard/:mint`](#get-watchlistleaderboardmint) | 3 | Top holders for a token |
 | [`GET /market/prices`](#get-marketprices) | 1 | Live BTC/ETH/SOL/BNB/XRP prices |
 | [`GET /market/sentiment`](#get-marketsentiment) | 1 | Fear & Greed index reading |
@@ -196,45 +194,6 @@ Stored history of how a wallet's risk score has changed over time.
 
 ---
 
-### `GET /discover`
-
-The live Mint Scan feed — New, Near Migration, and Migrated Solana tokens, each cross-checked against the on-chain risk profile of the wallet that deployed it.
-
----
-
-### `GET /discover/chart/:address`
-
-Candlestick price data for a token.
-
-**Query params:** `resolution` — `30s` | `1m` | `5m` | `15m` | `1h` | `4h` | `1d` (default `5m`)
-
-Request:
-
-```bash
-curl "<your-api-host>/api/discover/chart/{address}?resolution=5m" \
-  -H "Authorization: Bearer bm_live_..."
-```
-
-Response:
-
-```json
-{
-  "candles": [
-    {
-      "time": 1788341130,
-      "open": 0.0000334,
-      "high": 0.0000335,
-      "low": 0.0000327,
-      "close": 0.0000327,
-      "volume": 25.24
-    }
-  ],
-  "cached": false
-}
-```
-
----
-
 ### `GET /watchlist/leaderboard/:mint`
 
 Top holders for a given SPL token mint.
@@ -278,7 +237,7 @@ Top-performing Solana tokens right now.
 | `401` | Missing or invalid API key |
 | `404` | Resource not found |
 | `429` | Rate limit exceeded for your plan |
-| `502` | An upstream data source (Helius, GMGN, CoinGecko) is temporarily unavailable |
+| `502` | An upstream data source (Helius, CoinGecko, alternative.me) is temporarily unavailable |
 
 ---
 
