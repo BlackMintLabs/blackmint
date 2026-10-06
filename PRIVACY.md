@@ -1,7 +1,7 @@
 # Privacy Policy
 
 **Effective Date:** July 2026
-**Last Updated:** September 2026
+**Last Updated:** October 2026
 
 ## 1. Introduction
 
@@ -24,7 +24,6 @@ We store data you actively create on the Platform, including:
 - Wallet addresses you add to your watchlist
 - Wallet monitors you set up for Telegram alerts
 - Risk scores generated for wallets you analyse
-- Favorited tokens on Mint Scan
 - API keys you generate (stored as cryptographic hashes only)
 - AI conversation history (stored to provide conversation continuity)
 - Search history (stored locally in your browser)
@@ -42,7 +41,7 @@ Standard server logs including request timestamps, IP addresses, and error messa
 We use the data we collect solely to:
 
 - Authenticate your wallet and maintain your session
-- Deliver the Platform's features — transaction history, risk scoring, Mint Scan, whale tracking, alerts, and the AI Assistant are available to every connected wallet at no charge
+- Deliver the Platform's features — transaction history, risk scoring, whale tracking, alerts, and the AI Assistant are available to every connected wallet at no charge
 - Verify API subscription payments on-chain, for users who choose to upgrade their API rate limits
 - Send Telegram alerts for wallets you have chosen to monitor
 - Improve the reliability and performance of the Platform
@@ -58,8 +57,8 @@ BlackMint uses the following third-party services to operate the Platform. Each 
 
 - **Helius** — Solana blockchain data and RPC. Wallet addresses and transaction data are sent to Helius to retrieve on-chain information.
 - **Anthropic** — AI-powered risk recommendations and the AI Assistant. Wallet analysis context is sent to Anthropic's API to generate insights.
-- **GMGN** — Live token and market data for Mint Scan. Token addresses are sent to GMGN's API to retrieve pricing, liquidity, and chart information. No personal or wallet-identifying data is sent to GMGN.
 - **CoinGecko** — Market price and token data. No personal data is sent to CoinGecko.
+- **alternative.me** — Fear and Greed market sentiment data. No personal data is sent to alternative.me.
 - **Vercel** — Frontend hosting. Standard web request logs may be collected by Vercel.
 - **Railway** — Backend infrastructure hosting. Server logs are retained by Railway according to their data retention policy.
 
